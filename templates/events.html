@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Live Events</h2>
+<div class="mb-3">
+  <label for="decision-filter" class="form-label">Filter by decision</label>
+  <select id="decision-filter" class="form-select" aria-label="Decision filter">
+    <option value="">All</option>
+    <option value="BENIGN">Benign</option>
+    <option value="SUSPICIOUS">Suspicious</option>
+    <option value="BLOCKED">Blocked</option>
+  </select>
+</div>
+<table class="table table-striped" id="events-table">
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Source IP</th>
+      <th>Destination IP</th>
+      <th>Attack Type</th>
+      <th>Decision</th>
+      <th>Packet Count</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<script src="/static/js/events.js"></script>
+{% endblock %}
