@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between mb-3">
+    <h3>Blocked IPs</h3>
+    <div class="text-muted">Active blocks reported by FPGA</div>
+</div>
+<table class="table table-striped" id="blocked-table">
+    <thead>
+        <tr>
+            <th>IP Address</th>
+            <th>Attack Type</th>
+            <th>First Seen</th>
+            <th>Last Seen</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        window.blockedPage && window.blockedPage();
+    });
+</script>
+{% endblock %}
