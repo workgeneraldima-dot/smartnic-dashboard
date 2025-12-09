@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between mb-3">
+    <h3>Live Events</h3>
+    <div>
+        <label class="form-label me-2" for="filter">Filter:</label>
+        <select id="filter" class="form-select d-inline-block w-auto">
+            <option value="ALL">All</option>
+            <option value="BLOCKED">Blocked</option>
+            <option value="SUSPICIOUS">Suspicious</option>
+            <option value="BENIGN">Benign</option>
+        </select>
+    </div>
+</div>
+<table class="table table-hover" id="events-table">
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Source IP</th>
+            <th>Destination IP</th>
+            <th>Attack</th>
+            <th>Decision</th>
+            <th>Packets</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        window.eventsPage && window.eventsPage();
+    });
+</script>
+{% endblock %}

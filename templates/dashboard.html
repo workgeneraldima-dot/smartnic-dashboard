@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row g-3 mb-3">
+    <div class="col-md-4">
+        <div class="card text-bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">Total Events (24h)</h5>
+                <p class="card-text display-6" id="stat-total">0</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-bg-danger">
+            <div class="card-body">
+                <h5 class="card-title">Attacks Today</h5>
+                <p class="card-text display-6" id="stat-attacks">0</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-bg-warning">
+            <div class="card-body">
+                <h5 class="card-title">Blocked IPs</h5>
+                <p class="card-text display-6" id="stat-blocked">0</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">Attacks Over Time</div>
+            <div class="card-body">
+                <canvas id="chart-line"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Attack Types</div>
+            <div class="card-body">
+                <canvas id="chart-pie"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        window.dashboardPage && window.dashboardPage();
+    });
+</script>
+{% endblock %}

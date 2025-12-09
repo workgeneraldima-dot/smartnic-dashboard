@@ -1,0 +1,5 @@
+body { background-color: #f7f8fa; }
+.card { box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075); }
+.decision-benign { background-color: #e9f7ef; }
+.decision-suspicious { background-color: #fff9e6; }
+.decision-blocked { background-color: #fbe9e7; }
