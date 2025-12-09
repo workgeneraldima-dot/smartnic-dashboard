@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Settings</h2>
+<form id="settings-form" class="row g-3">
+  <div class="col-md-4">
+    <label class="form-label" for="syn-threshold">SYN Threshold</label>
+    <input type="number" class="form-control" id="syn-threshold" name="syn_threshold" min="0">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label" for="udp-threshold">UDP Threshold</label>
+    <input type="number" class="form-control" id="udp-threshold" name="udp_threshold" min="0">
+  </div>
+  <div class="col-md-4 d-flex align-items-end">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="ml-enabled" name="ml_enabled">
+      <label class="form-check-label" for="ml-enabled">Enable ML Classifier</label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Save</button>
+    <span id="save-status" class="ms-3 text-success"></span>
+  </div>
+</form>
+<script src="/static/js/settings.js"></script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row mb-4">
+  <div class="col-md-4">
+    <div class="card text-bg-primary mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Events (Last Hour)</h5>
+        <p class="card-text display-6" id="events-count">0</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-bg-danger mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Blocked IPs</h5>
+        <p class="card-text display-6" id="blocked-count">0</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-bg-success mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Benign vs. Threats</h5>
+        <p class="card-text" id="decision-summary">Loading...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6 mb-4">
+    <div class="card">
+      <div class="card-header">Attacks by Type</div>
+      <div class="card-body">
+        <canvas id="attackTypeChart" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 mb-4">
+    <div class="card">
+      <div class="card-header">Decision Breakdown (Last Hour)</div>
+      <div class="card-body">
+        <canvas id="decisionChart" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/static/js/dashboard.js"></script>
+{% endblock %}
